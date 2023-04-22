@@ -54,7 +54,7 @@ module.exports = {
 
   async delete(request, response) {
     try {
-      await response.Video.remove();
+      await response.video.remove();
       return response.status(200).json({ message: 'Video update successfully!' });
     } catch (err) {
       return response.status(500).json({ error: err.message });

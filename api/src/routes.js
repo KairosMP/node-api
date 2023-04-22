@@ -1,6 +1,11 @@
 const express = require('express');
 const routes = express.Router();
 
-routes.get('/', (request, response) => response.send('hello world'));
+const VideoController = require('./controllers/VideoController');
 
-module.exports = routes
+const videosUrl = "/videos"
+
+routes.get(videosUrl, VideoController.index);
+routes.post(videosUrl, VideoController.store)
+
+module.exports = routes;

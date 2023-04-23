@@ -11,5 +11,6 @@ routes.post(videosUrl, VideoController.store);
 
 routes.put(videosUrl + "/:id", VideoMiddleware.validateId, VideoController.update)
 routes.delete(videosUrl + "/:id", VideoMiddleware.validateId, VideoController.delete)
+routes.patch(videosUrl + "/:id", VideoMiddleware.validateId, VideoController.updateLike)
 
 module.exports = routes;

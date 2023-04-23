@@ -19,10 +19,10 @@ module.exports = {
     }
 
     const video = new Video({
+      liked: false,
       _id: uuid(),
       title,
       link,
-      liked: false,
     });
 
     try {
@@ -60,5 +60,18 @@ module.exports = {
       return response.status(500).json({ error: err.message });
     }
   },
+
+  async updateLike(request, response) {
+    response.video.liked = !response.video.liked;
+
+    try {
+      await response.video.save();
+
+      return response.status(200).json({
+        message: `video ${response.video.liked ? 'liked' : 'unliked'} successfully!`,
+      });
+    } catch (err) {
+      response.status(500).json({ error: err.message });
+    }
+  },
 };
- 

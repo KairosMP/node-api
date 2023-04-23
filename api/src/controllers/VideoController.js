@@ -54,10 +54,11 @@ module.exports = {
 
   async delete(request, response) {
     try {
-      await response.video.remove();
+      await response.video.deleteOne();
       return response.status(200).json({ message: 'Video update successfully!' });
     } catch (err) {
       return response.status(500).json({ error: err.message });
     }
   },
 };
+ 

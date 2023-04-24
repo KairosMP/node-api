@@ -1,11 +1,13 @@
 import Layout from "./components/layout";
 import GlobalStyles from "./styles/GlobalStyles";
-
+import { VideoContextsProvider } from "./contexts/CideoContext";
 
 function App() {
   return (
     <>
-    <Layout />
+    <VideoContextsProvider>
+      <Layout />
+    </VideoContextsProvider>
     <GlobalStyles />
     </>
   );

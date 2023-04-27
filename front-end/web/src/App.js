@@ -1,6 +1,6 @@
 import Layout from "./components/layout";
 import GlobalStyles from "./styles/GlobalStyles";
-import { VideoContextsProvider } from "./contexts/CideoContext";
+import { VideoContextsProvider } from "./contexts/videoContext";
 
 function App() {
   return (
